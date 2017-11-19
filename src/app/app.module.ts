@@ -13,11 +13,11 @@ import { ScoreComponent } from './score/score.component';
 const ROUTES = [
   {
     path: '',
-    redirectTo: 'posts',
-    pathMatch: 'full'
-  },
-  {
-    path: 'posts',
+  //   redirectTo: 'posts',
+  //   pathMatch: 'full'
+  // },
+  // {
+  //   path: 'posts',
     component: ScoreComponent
   }
 ];
