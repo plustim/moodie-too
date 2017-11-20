@@ -18,7 +18,6 @@ router.post('/judge', (req, res) => {
 	// convert this to an image face++ will understand (they say they can accept base64, but in my experience they can't)
 	const image = base64ToImg(imageURI, "dist/temp/", {debug: true});
 	const imageUrl = baseURL + "/temp/" + image.fileName;
-	//const imageUrl = "http://faceresearch.org/uploads/base/white_male";
 	
 	const fppParams = {
 		api_key: "6rH88UB11ggkHwhuljdWC0Bl0vujjUfs",

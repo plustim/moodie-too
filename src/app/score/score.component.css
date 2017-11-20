@@ -1,0 +1,23 @@
+.chart{
+	border: 1px solid #333;
+	background: #333;
+}
+
+.chart div{
+	background: #60b8ff;
+	height: 10px;
+}
+
+.cart-text{
+	text-align: center;
+}
+
+.result-block{
+	max-width: 400px;
+	display: inline-block;
+	transition: 0.4s ease-in-out width;
+	overflow: hidden;
+	margin: 1%;
+}
+
+.card{padding: 10px;}

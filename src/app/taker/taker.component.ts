@@ -28,8 +28,8 @@ import { WebCamComponent } from 'ack-angular-webcam';
   constructor(public http:Http){}
 
   options = {
-    width: 400,
-    height: 300,
+    width: "533",
+    height: "400",
     fallbackMode: 'callback',
     fallbackSrc: 'jscam_canvas_only.swf',
     fallbackQuality: 85,
@@ -38,24 +38,15 @@ import { WebCamComponent } from 'ack-angular-webcam';
   facePhoto = "http://www.catster.com/wp-content/uploads/2017/08/A-fluffy-cat-looking-funny-surprised-or-concerned.jpg";
   sendPhoto;
   pictureEmpty = true;
+  submitted = false;
 
   ngOnInit() {
   }
 
   submit(){
-    console.log("eval");
     this.sendPhoto = this.base64;
+    this.submitted = true;
   }
- 
-  // so ack-angular-webcam doesn't seem to support custom arguments correctly
-  // genBase64(){
-  //   this.webcam.getBase64("image/jpeg")
-  //   .then( base=>{
-  //     this.base64 = base;
-  //     this.pictureEmpty = false;
-  //   })
-  //   .catch( e=>console.error(e) )
-  // }
 
   leafState:String = "open";
   apState:String = "open";

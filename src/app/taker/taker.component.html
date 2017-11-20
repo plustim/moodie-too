@@ -1,19 +1,27 @@
-<div id="camera-box">
-	<img class="photo" [src]="base64" [hidden]="pictureEmpty" />
-	<ack-webcam
-	[(ref)]   = "webcam"
-	[options] = "options"
-	(success) = "onCamSuccess($event)"
-	(catch)   = "onCamError($event)"
-	></ack-webcam>
-	<div id="aperture" [@apAnimation]='apState'>
-		<div [@leafAnimation]='leafState'></div>
-		<div [@leafAnimation]='leafState'></div>
-		<div [@leafAnimation]='leafState'></div>
+<div class="body">
+	<div class="camera-block">
+		<div id="camera-box">
+			<img class="photo" [src]="base64" [hidden]="pictureEmpty" />
+			<ack-webcam
+			[(ref)]   = "webcam"
+			[options] = "options"
+			(success) = "onCamSuccess($event)"
+			(catch)   = "onCamError($event)"
+			></ack-webcam>
+			<div id="aperture" [@apAnimation]='apState'>
+				<div [@leafAnimation]='leafState'></div>
+				<div [@leafAnimation]='leafState'></div>
+				<div [@leafAnimation]='leafState'></div>
+			</div>
+		</div>
+		<div [hidden]="submitted">
+			<button (click)="resetCamera()" [hidden]="pictureEmpty"> re-take </button>
+			<button (click)="genBase64()" [hidden]="!pictureEmpty"> take picture </button>
+			<button (click)="submit()" [disabled]="pictureEmpty"> Evaluate </button>
+		</div>
 	</div>
-</div>
-<button (click)="resetCamera()" [hidden]="pictureEmpty"> re-take </button>
-<button (click)="genBase64()" [hidden]="!pictureEmpty"> take picture </button>
 
-<button (click)="submit()" [disabled]="pictureEmpty"> Evaluate </button>
-<app-score [facePhoto]="sendPhoto"></app-score>
+	<app-score [facePhoto]="sendPhoto"></app-score>
+
+</div>
+<div></div>

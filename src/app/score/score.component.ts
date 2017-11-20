@@ -8,17 +8,17 @@ import { ScoreService } from '../score.service';
 })
 export class ScoreComponent implements OnChanges {
   results: any = {};
+  bar: any = {};
+  boxStyle = {width: "0%"};
   @Input() facePhoto: String;
 
   constructor(private scoreService: ScoreService) { }
 
   ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
-    console.log("uate");
     for (let propName in changes) {
       let changedProp = changes[propName];
       let to = changedProp.currentValue;
       if( typeof to != "undefined" ){
-        console.log(`${propName} changed to ${to}`);
         this.giveScore(to);
       }
     }
@@ -27,6 +27,16 @@ export class ScoreComponent implements OnChanges {
   giveScore = (facePic: String) => {
     this.scoreService.rateMyFace(facePic).subscribe(results => {
       this.results = results;
+      this.bar = {
+        anger: {width: results.anger + "%"},
+        disgust: {width: results.disgust + "%"},
+        fear: {width: results.fear + "%"},
+        happiness: {width: results.happiness + "%"},
+        neutral: {width: results.neutral + "%"},
+        sadness: {width: results.sadness + "%"},
+        surprise: {width: results.surprise + "%"}
+      };
+      this.boxStyle = {width: "98%"};
       // should add error handling here
     });
   }
