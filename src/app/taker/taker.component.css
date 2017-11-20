@@ -39,7 +39,7 @@ button{
 	width: 100%;
 	height: 100%;
 	top: 0%;
-	box-shadow: 0 0 0 500px black;
+	box-shadow: 0 0 0 500px #333;
 }
 
 #aperture div:nth-child(2){
