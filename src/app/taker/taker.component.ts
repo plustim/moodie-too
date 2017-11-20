@@ -88,5 +88,5 @@ import { WebCamComponent } from 'ack-angular-webcam';
 
   onCamError(err){}
  
-  onCamSuccess(){}
+  onCamSuccess(event){}
 }
