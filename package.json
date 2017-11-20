@@ -29,6 +29,7 @@
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
+    "ack-angular-webcam": "^1.5.0",
     "axios": "^0.17.1",
     "base64-to-image": "^1.0.2",
     "body-parser": "^1.18.2",

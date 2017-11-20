@@ -3,11 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { WebCamModule } from 'ack-angular-webcam';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 
 import { ScoreService } from './score.service';
 import { ScoreComponent } from './score/score.component';
+import { TakerComponent } from './taker/taker.component';
 
 // routes
 const ROUTES = [
@@ -18,20 +21,23 @@ const ROUTES = [
   // },
   // {
   //   path: 'posts',
-    component: ScoreComponent
+    component: TakerComponent
   }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    ScoreComponent
+    ScoreComponent,
+    TakerComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    WebCamModule,
+    BrowserAnimationsModule
   ],
   providers: [ScoreService],
   bootstrap: [AppComponent]
