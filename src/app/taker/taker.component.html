@@ -20,8 +20,10 @@
 			<button (click)="submit()" [disabled]="pictureEmpty"> Evaluate </button>
 		</div>
 	</div>
-
-	<app-score [facePhoto]="sendPhoto"></app-score>
-
+	<div class="result-block" [ngStyle]="resultStyle">
+		<app-score [facePhoto]="sendPhoto"></app-score>
+	</div>
+	<div [hidden]="!submitted">
+		<button (click)="restart()"> Play Again </button>
+	</div>
 </div>
-<div></div>

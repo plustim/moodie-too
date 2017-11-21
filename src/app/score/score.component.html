@@ -1,19 +1,20 @@
-<div class="result-block" [ngStyle]="boxStyle">
-  <div class="brick">
-    <h4 class="card-title">results:</h4>
-    <div class="chart"><div [ngStyle]="bar.anger"></div></div>
-    <p>anger: {{results.anger}}</p>
-    <div class="chart"><div [ngStyle]="bar.disgust"></div></div>
-    <p>disgust: {{results.disgust}}</p>
-    <div class="chart"><div [ngStyle]="bar.fear"></div></div>
-    <p>fear: {{results.fear}}</p>
-    <div class="chart"><div [ngStyle]="bar.happiness"></div></div>
-    <p>happiness: {{results.happiness}}</p>
-    <div class="chart"><div [ngStyle]="bar.neutral"></div></div>
-    <p>neutral: {{results.neutral}}</p>
-    <div class="chart"><div [ngStyle]="bar.sadness"></div></div>
-    <p>sadness: {{results.sadness}}</p>
-    <div class="chart"><div [ngStyle]="bar.surprise"></div></div>
-    <p>surprise: {{results.surprise}}</p>
-  </div>
+<div class="brick" [hidden]="!gotResults">
+  <h4 class="card-title">results:</h4>
+  <div class="chart"><div [ngStyle]="bar.anger"></div></div>
+  <p>anger: {{results.anger}}</p>
+  <div class="chart"><div [ngStyle]="bar.disgust"></div></div>
+  <p>disgust: {{results.disgust}}</p>
+  <div class="chart"><div [ngStyle]="bar.fear"></div></div>
+  <p>fear: {{results.fear}}</p>
+  <div class="chart"><div [ngStyle]="bar.happiness"></div></div>
+  <p>happiness: {{results.happiness}}</p>
+  <div class="chart"><div [ngStyle]="bar.neutral"></div></div>
+  <p>neutral: {{results.neutral}}</p>
+  <div class="chart"><div [ngStyle]="bar.sadness"></div></div>
+  <p>sadness: {{results.sadness}}</p>
+  <div class="chart"><div [ngStyle]="bar.surprise"></div></div>
+  <p>surprise: {{results.surprise}}</p>
+</div>
+<div class="brick" [hidden]="gotResults">
+  <img class="loading" src="/assets/Loading_icon.gif" />
 </div>

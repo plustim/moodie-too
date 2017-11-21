@@ -35,10 +35,10 @@ import { WebCamComponent } from 'ack-angular-webcam';
     fallbackQuality: 85,
     cameraType: 'front'
   };
-  facePhoto = "http://www.catster.com/wp-content/uploads/2017/08/A-fluffy-cat-looking-funny-surprised-or-concerned.jpg";
   sendPhoto;
   pictureEmpty = true;
   submitted = false;
+  resultStyle = {width: "0%"};
 
   ngOnInit() {
   }
@@ -46,6 +46,7 @@ import { WebCamComponent } from 'ack-angular-webcam';
   submit(){
     this.sendPhoto = this.base64;
     this.submitted = true;
+    this.resultStyle = {width: "98%"};
   }
 
   leafState:String = "open";
@@ -80,4 +81,10 @@ import { WebCamComponent } from 'ack-angular-webcam';
   onCamError(err){}
  
   onCamSuccess(event){}
+
+  restart(){
+    this.resetCamera();
+    this.submitted = false;
+    this.resultStyle = {width: "0%"};
+  }
 }

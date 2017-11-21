@@ -7,9 +7,8 @@ https.post = require("https-post");
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.send('api works');
+  res.send('hello');
 });
-
 
 router.post('/judge', (req, res) => {
 	const baseURL = "https://moodie-too.herokuapp.com/";

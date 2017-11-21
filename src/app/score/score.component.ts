@@ -9,7 +9,7 @@ import { ScoreService } from '../score.service';
 export class ScoreComponent implements OnChanges {
   results: any = {};
   bar: any = {};
-  boxStyle = {width: "0%"};
+  gotResults:boolean = false;
   @Input() facePhoto: String;
 
   constructor(private scoreService: ScoreService) { }
@@ -25,6 +25,7 @@ export class ScoreComponent implements OnChanges {
   }
 
   giveScore = (facePic: String) => {
+    this.gotResults = false;
     this.scoreService.rateMyFace(facePic).subscribe(results => {
       this.results = results;
       this.bar = {
@@ -36,7 +37,7 @@ export class ScoreComponent implements OnChanges {
         sadness: {width: results.sadness + "%"},
         surprise: {width: results.surprise + "%"}
       };
-      this.boxStyle = {width: "98%"};
+      this.gotResults = true;
       // should add error handling here
     });
   }

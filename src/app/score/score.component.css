@@ -12,14 +12,6 @@
 	text-align: center;
 }
 
-.result-block{
-	max-width: 400px;
-	display: inline-block;
-	transition: 0.4s ease-in-out width;
-	overflow: hidden;
-	margin: 0 1%;
-}
-
 .brick{
 	height: 400px;
 	padding: 10px;
@@ -30,4 +22,9 @@
 
 .brick p{
 	margin: 0 0 12px;
+}
+
+img.loading{
+	width: 100%;
+	margin-top: 16%;
 }
